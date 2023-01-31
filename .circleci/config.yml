@@ -44,6 +44,7 @@ jobs:
           name: Build front-end
           command: |
             cd frontend
+            npm audit fix --audit-level=critical
             npm install
             npm run build
       - save_cache:
@@ -61,6 +62,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
+            npm audit fix --audit-level=critical
             npm install
             npm run build
       - save_cache:
@@ -78,6 +80,7 @@ jobs:
           name: Front-end test
           command: |
             cd frontend
+            npm audit fix --audit-level=critical
             npm install
             npm run test
                 
@@ -92,6 +95,7 @@ jobs:
           name: Back-end test
           command: |
             cd backend
+            npm audit fix --audit-level=critical
             npm install
             npm run test
             
@@ -106,6 +110,7 @@ jobs:
           name: Front-end audit
           command: |
             cd frontend
+            npm audit fix --audit-level=critical
             npm install
             npm audit --audit-level=critical
 
@@ -120,6 +125,7 @@ jobs:
           name: Backend-end audit
           command: |
             cd backend
+            npm audit fix --audit-level=critical
             npm install
             npm audit --audit-level=critical
 
