@@ -1,0 +1,7 @@
+- name: update packages
+  shell: apt update && apt upgrade -y
+
+- name: Install NodeJS, npm and pm2
+  apt:
+    name: nodejs npm pm2
+    state: present
